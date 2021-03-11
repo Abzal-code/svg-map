@@ -1,0 +1,105 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+.map {
+	position: relative;
+	text-align: center;
+}
+
+svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.part {
+	opacity: .3;
+}
+
+.part:hover {
+	transition: opacity .2s ease;
+	opacity: .5;
+	cursor: pointer;
+}
+
+
+.description {
+	display: none;
+	position: absolute;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 300px;
+	min-height: 400px;
+	box-shadow: 0 0 32px 10px #ccc;
+	left: 50px;
+	bottom: calc(50% - 200px);
+	font-family: sans-serif;
+}
+
+.description img {
+	width: 250px;
+	margin-bottom: 20px;
+}
+
+#map { 
+  fill: hsl(120, 55%, 20%);
+}
+
+#map g {
+  transition: .3s;
+}
+
+#map g:hover { 
+  fill: hsl(120, 55%, 40%);
+  cursor: pointer;
+}
+
+.active, .active:hover { 
+  fill: hsl(240, 55%, 40%) !important;
+}	
+
+#partInfo { 
+  position: absolute;
+  top: 0; right: 0;
+  width: 25%;
+  background: rgba(0,0,0,0.2);
+  pointer-events: none;
+  opacity: 0;
+  transition: 1s; 
+}
+
+@media all and (max-width: 800px) {
+  #partInfo { width: 40%; }
+}
+
+@media all and (max-width: 750px) {
+  #partInfo { 
+    width: 100%; 
+    position: static; 
+    background: none;
+  }
+
+#partInfo.show p { 
+  color: #000 !important; 
+  margin-bottom: 2rem; 
+  }
+}
+
+#partInfo.show { opacity: 1; }
+
+#partInfo h1 {
+  background: hsl(240, 55%, 40%);
+  padding: .3rem;
+  padding-left: 1rem;
+  margin-top: -.5rem;
+  font-weight: 400;
+}
+
+#partInfo p {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+#partInfo img {
+  width: 100%;
+}
